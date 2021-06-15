@@ -9,12 +9,20 @@ import { usuarios } from '../../assets/usuarios.json';
 export class ServApiService {
   private url = 'https://swapi.dev/api/vehicles/';
   user;
+  detailsShip;
   constructor(private http: HttpClient) {}
 
   getShip(): Observable<Ship> {
     return this.http.get<Ship>(this.url);
   }
-
+  // obtengo nave a buscar
+  setShipDetails(url) {
+    this.detailsShip = this.http.get<Ship>(url);
+  }
+  // muestro nave
+  getShipDetails(): Observable<Ship> {
+    return this.detailsShip;
+  }
   getUser() {
     return this.user;
   }
