@@ -5,7 +5,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './components/login/login.component';
 import { ListComponent } from './components/list/list.component';
-import { RegisterComponent } from './components/register/register.component';
+import { RegisterComponent } from './pages/register/register.component';
 import { HeaderComponent } from './components/header/header.component';
 import { HomeComponent } from './pages/home/home.component';
 import { DetalleComponent } from './pages/detalle/detalle.component';
@@ -18,13 +18,10 @@ import { DetalleComponent } from './pages/detalle/detalle.component';
     RegisterComponent,
     HeaderComponent,
     HomeComponent,
-    DetalleComponent
+    DetalleComponent,
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule
-  ],
+  imports: [BrowserModule, AppRoutingModule],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
