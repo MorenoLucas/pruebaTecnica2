@@ -1,0 +1,22 @@
+{ "usuarios": [
+    {
+        "id": 1,
+        "nombre": "Lucas",
+        "apellidos": "Moreno",
+        "password": "123456",
+        "email": "sl.lucasmoreno@gmail",
+        "tel": 111111111 ,
+        "imgUsuario": "https://www.rd.com/wp-content/uploads/2017/09/01-shutterstock_476340928-Irina-Bg-1024x683.jpg"
+    
+      },
+      {
+        "id": 2,
+        "nombre": "Angel",
+        "apellidos": "Romero",
+        "password": "123456",
+        "email": "ag@gmail.com",
+        "tel": 111111111 ,
+        "imgUsuario": "https://www.rd.com/wp-content/uploads/2017/09/01-shutterstock_476340928-Irina-Bg-1024x683.jpg"
+      }
+     
+]}

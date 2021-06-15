@@ -9,15 +9,14 @@ import { ServApiService } from 'src/app/services/serv-api.service';
 })
 export class HomeComponent implements OnInit {
   vehicles;
-  constructor(private servApi: ServApiService) {}
-
-  ngOnInit(): void {
-    this.getSship();
-  }
-
-  getSship() {
+  naves;
+  user;
+  constructor(private servApi: ServApiService) {
     this.servApi.getShip().subscribe((item: Ship) => {
       this.vehicles = item;
+      this.naves = this.vehicles.results;
     });
   }
+
+  ngOnInit() {}
 }
