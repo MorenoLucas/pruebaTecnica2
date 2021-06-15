@@ -12,10 +12,13 @@ export class HomeComponent implements OnInit {
   naves;
   user;
   constructor(private servApi: ServApiService) {
+    this.user = this.servApi.getUser();
+    // if (this.user) {
     this.servApi.getShip().subscribe((item: Ship) => {
       this.vehicles = item;
       this.naves = this.vehicles.results;
     });
+    // }
   }
 
   ngOnInit() {}

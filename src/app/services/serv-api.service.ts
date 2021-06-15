@@ -8,16 +8,24 @@ import { usuarios } from '../../assets/usuarios.json';
 })
 export class ServApiService {
   private url = 'https://swapi.dev/api/vehicles/';
-
+  user;
   constructor(private http: HttpClient) {}
 
   getShip(): Observable<Ship> {
     return this.http.get<Ship>(this.url);
   }
 
+  getUser() {
+    return this.user;
+  }
   compareLogin(email: string, password: string) {
-    return usuarios.find(
+    this.user = usuarios.find(
       (user) => user.email === email && user.password === password
     );
+    if (this.user) {
+      return true;
+    } else {
+      return false;
+    }
   }
 }
