@@ -1,74 +1,93 @@
 <!-- https://www.fda.gov/food/food-labeling-nutrition/changes-nutrition-facts-label -->
-<div class="p-1 border-2 border-black font-sans w-72">
-  <div class="text-4xl font-extrabold leading-none">{{ nave.name }}</div>
-  <div class="leading-snug">{{ nave.vehicle_class }}</div>
-  <div class="flex justify-between font-bold border-b-8 border-black">
-    <div>Manufacture</div>
-    <div>{{ nave.manufacturer }}</div>
-  </div>
-  <div class="flex justify-between items-end font-extrabold">
-    <div>
-      <div class="font-bold">Model</div>
-      <div class="text-4xl">{{ nave.model }}</div>
-    </div>
-    <!-- <div class="text-5xl">45</div> -->
-  </div>
-  <div class="border-t-4 border-black text-sm pb-1">
-    <!-- <div class="text-right font-bold pt-1 pb-1">% Daily value*</div> -->
-    <hr class="border-gray-500" />
-    <div class="flex justify-between">
-      <div><span class="font-bold">Cargo capacity</span></div>
-      <div class="font-bold">{{ nave.cargo_capacity }}</div>
-    </div>
-    <hr class="border-gray-500" />
-    <div class="flex justify-between">
-      <div>Consumables</div>
-      <div class="font-bold">{{ nave.consumables }}</div>
-    </div>
-    <hr class="border-gray-500" />
-    <div class="flex justify-between">
-      <div><span class="font-bold">Cost in Creditis</span></div>
-      <div class="font-bold">{{ nave.cost_in_creditis }}</div>
-    </div>
-    <hr class="border-gray-500" />
-    <div class="flex justify-between">
-      <div><span class="font-bold">Crew</span></div>
-      <div class="font-bold">{{ nave.crew }}</div>
-    </div>
-    <hr class="border-gray-500" />
-    <div class="flex justify-between">
-      <div><span class="font-bold">Films</span></div>
-      <div class="font-bold"></div>
-    </div>
-    <hr class="border-gray-500" />
-    <div class="flex justify-between" *ngFor="let item of films">
-      <div class="pl-4">
-        {{ item }}
-        <hr class="border-gray-500" />
-      </div>
-    </div>
+<div class="h-screen font-sans login bg-cover">
+  <div class="container mx-auto h-full flex flex-1 justify-center items-center">
+    <div class="w-full max-w-lg">
+      <div class="leading-loose">
+        <div class="p-1 border-2 border-black font-sans w-84">
+          <div class="text-4xl font-extrabold leading-none text-yellow-300">
+            {{ nave.name }}
+          </div>
+          <div class="leading-snug text-gray-200">{{ nave.vehicle_class }}</div>
+          <div class="flex justify-between font-bold border-b-4 border-gray">
+            <div class="text-gray-200">Manufacture</div>
+            <div class="text-gray-300">{{ nave.manufacturer }}</div>
+          </div>
+          <div class="flex justify-between items-end font-extrabold">
+            <div>
+              <div class="font-bold text-gray-200">Model</div>
+              <div class="text-4xl text-yellow-300">{{ nave.model }}</div>
+            </div>
+          </div>
+          <div class="border-t-4 border-gray text-sm pb-1 m-2">
+            <hr class="border-gray-500" />
+            <div class="flex justify-between">
+              <div><span class="text-gray-200"> Cargo capacity</span></div>
+              <div class="font-bold text-gray-300">
+                {{ nave.cargo_capacity }}
+              </div>
+            </div>
+            <hr class="border-gray-500" />
+            <div class="flex justify-between">
+              <div class="text-gray-200">Consumables</div>
+              <div class="font-bold text-gray-300">{{ nave.consumables }}</div>
+            </div>
+            <hr class="border-gray-500" />
+            <div class="flex justify-between">
+              <div><span class="text-gray-200">Cost in Credits</span></div>
+              <div class="font-bold text-gray-300">
+                {{ nave.cost_in_credits }}
+              </div>
+            </div>
+            <hr class="border-gray-500" />
+            <div class="flex justify-between">
+              <div><span class="text-gray-200">Crew</span></div>
+              <div class="font-bold text-gray-300">{{ nave.crew }}</div>
+            </div>
+            <hr class="border-gray-500" />
+            <div class="flex justify-between">
+              <div><span class="font-bold text-gray-200">Films</span></div>
+              <div class="font-bold"></div>
+            </div>
+            <hr class="border-gray-500" />
+            <div class="flex justify-between" *ngFor="let item of films">
+              <div class="pl-4 text-gray-300">
+                {{ item }}
+                <hr class="border-gray-500" />
+              </div>
+            </div>
 
-    <div class="flex justify-between">
-      <div><span class="font-bold">Length</span></div>
-      <div class="font-bold">{{ nave.length }}</div>
-    </div>
-  </div>
-  <div class="border-t-8 border-black pt-1 text-sm">
-    <div class="flex justify-between">
-      <div>Max atmosphering speed</div>
-      <div>{{ nave.max_atmosphering_speed }}</div>
-    </div>
-    <hr class="border-gray-500" />
-    <div class="flex justify-between">
-      <div>Passengers</div>
-      <div>{{ nave.passengers }}</div>
-    </div>
+            <div class="flex justify-between">
+              <div><span class="text-gray-200">Length</span></div>
+              <div class="font-bold text-gray-300">{{ nave.length }} m</div>
+            </div>
+            <!-- </div>
+  <div class="border-t-8 border-black pt-1 text-sm"> -->
+            <div class="flex justify-between">
+              <div class="text-gray-200">Max atmosphering speed</div>
+              <div class="font-bold text-gray-300">
+                {{ nave.max_atmosphering_speed }}
+              </div>
+            </div>
+            <hr class="border-gray-500" />
+            <div class="flex justify-between">
+              <div class="text-gray-200">Passengers</div>
+              <div class="font-bold text-gray-300">{{ nave.passengers }}</div>
+            </div>
 
-    <hr class="border-gray-500" />
-    <div class="flex justify-between" *ngFor="let item of nave.pilots">
-      <div class="pl-4">
-        {{ item }}
-        <hr class="border-gray-500" />
+            <hr class="border-gray-500" />
+            <div class="flex justify-between">
+              <div><span class="font-bold text-gray-200">Pilots</span></div>
+              <div class="font-bold"></div>
+            </div>
+            <hr class="border-gray-500" />
+            <div class="flex justify-between" *ngFor="let item of nave.pilots">
+              <div class="pl-4 font-bold text-gray-300">
+                {{ item }}
+                <hr class="border-gray-500" />
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
