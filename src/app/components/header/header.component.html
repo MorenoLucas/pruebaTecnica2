@@ -57,6 +57,7 @@
         hover:text-gray-300
       "
       (click)="goLogin()"
+      *ngIf="!user"
     >
       Login
     </a>
@@ -71,6 +72,7 @@
         hover:text-gray-300
       "
       (click)="logout()"
+      *ngIf="user"
     >
       Logout
     </a>

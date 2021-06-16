@@ -7,12 +7,14 @@ import { Router } from '@angular/router';
   providedIn: 'root',
 })
 export class AuthService {
+  isLooged: boolean;
   constructor(public afAuth: AngularFireAuth, private router: Router) {}
   // Autentificación con firebase
   async loginAuth(email: string, password: string) {
     try {
       await this.afAuth.signInWithEmailAndPassword(email, password);
       this.router.navigateByUrl('/');
+      this.isLooged = true;
     } catch (error) {
       console.log(error);
     }
@@ -23,6 +25,8 @@ export class AuthService {
         email,
         password
       );
+      this.isLooged = true;
+
       return result;
     } catch (error) {
       console.log(error);
@@ -32,11 +36,12 @@ export class AuthService {
     try {
       await this.afAuth.signOut();
       window.location.reload();
+      this.isLooged = false;
     } catch (error) {
       console.log(error);
     }
   }
-  getCurrentUser() {
-    return this.afAuth.authState.pipe(first()).toPromise();
+  logueado() {
+    return this.isLooged;
   }
 }

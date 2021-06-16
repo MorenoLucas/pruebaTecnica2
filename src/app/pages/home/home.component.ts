@@ -13,7 +13,7 @@ import { AuthService } from '../../services/auth.service';
 export class HomeComponent implements OnInit {
   vehicles;
   naves;
-  user;
+  user: boolean;
   constructor(
     private servApi: ServApiService,
     private router: Router,
@@ -37,11 +37,12 @@ export class HomeComponent implements OnInit {
           this.servApi.getShip().subscribe((item: Ship) => {
             this.vehicles = item;
             this.naves = this.vehicles.results;
-            console.log('logueado');
+            this.auth.logueado();
+            this.user = true;
           });
         });
       } else {
-        console.log('NOLOGUEADO');
+        this.user = false;
       }
     });
   }
