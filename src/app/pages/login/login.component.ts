@@ -13,7 +13,9 @@ export class LoginComponent implements OnInit {
   password: string;
   constructor(private router: Router, private servApi: ServApiService) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    console.log('hola');
+  }
 
   goRegister() {
     this.router.navigateByUrl('/register');
