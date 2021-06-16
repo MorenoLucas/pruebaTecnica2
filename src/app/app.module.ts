@@ -14,6 +14,12 @@ import { HttpClientModule } from '@angular/common/http';
 // formulario
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
+// firebase
+import { AngularFireModule } from '@angular/fire';
+import { AngularFirestoreModule } from '@angular/fire/firestore';
+import { AngularFireStorageModule } from '@angular/fire/storage';
+import { AngularFireAuthModule } from '@angular/fire/auth';
+import { FB_CONFIG } from 'src/environments/credentials';
 @NgModule({
   declarations: [
     AppComponent,
@@ -30,6 +36,10 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     HttpClientModule,
     FormsModule,
     ReactiveFormsModule,
+    AngularFireModule.initializeApp(FB_CONFIG),
+    AngularFirestoreModule, // firestore
+    AngularFireAuthModule, // auth
+    AngularFireStorageModule, // storage
   ],
   providers: [],
   bootstrap: [AppComponent],
