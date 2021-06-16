@@ -1,19 +1,18 @@
 import { Injectable } from '@angular/core';
 import { AngularFireAuth } from '@angular/fire/auth';
+import { first } from 'rxjs/operators';
+import { Router } from '@angular/router';
 
 @Injectable({
   providedIn: 'root',
 })
 export class AuthService {
-  constructor(public afAuth: AngularFireAuth) {}
+  constructor(public afAuth: AngularFireAuth, private router: Router) {}
   // Autentificación con firebase
   async loginAuth(email: string, password: string) {
     try {
-      const result = await this.afAuth.signInWithEmailAndPassword(
-        email,
-        password
-      );
-      return result;
+      await this.afAuth.signInWithEmailAndPassword(email, password);
+      this.router.navigateByUrl('/');
     } catch (error) {
       console.log(error);
     }
@@ -32,8 +31,12 @@ export class AuthService {
   async logout() {
     try {
       await this.afAuth.signOut();
+      window.location.reload();
     } catch (error) {
       console.log(error);
     }
+  }
+  getCurrentUser() {
+    return this.afAuth.authState.pipe(first()).toPromise();
   }
 }

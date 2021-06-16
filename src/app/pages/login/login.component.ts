@@ -18,24 +18,12 @@ export class LoginComponent implements OnInit {
     private auth: AuthService
   ) {}
 
-  ngOnInit(): void {
-    console.log('hola');
-  }
+  ngOnInit(): void {}
 
   goRegister() {
     this.router.navigateByUrl('/register');
   }
   userCompare() {
-    if (this.servApi.compareLogin(this.email, this.password)) {
-      this.router.navigateByUrl('/');
-    } else {
-    }
-    const usuario = this.auth.loginAuth(this.email, this.password);
-    if (usuario) {
-      // te lleva al home
-      this.router.navigateByUrl('/');
-    } else {
-      alert('Usuario o contraseña no coinciden');
-    }
+    this.auth.loginAuth(this.email, this.password);
   }
 }
