@@ -10,6 +10,8 @@ export class ServApiService {
   private url = 'https://swapi.dev/api/vehicles/';
   user;
   detailsShip;
+  films = [];
+  peli;
   constructor(private http: HttpClient) {}
 
   getShip(): Observable<Ship> {
@@ -35,5 +37,19 @@ export class ServApiService {
     } else {
       return false;
     }
+  }
+  getFilms() {
+    this.films = [];
+    this.getShipDetails().subscribe((item) => {
+      item.films.forEach((films) =>
+        this.http.get(films).subscribe((film) => {
+          this.peli = film;
+          const pelicula = this.peli.title;
+          console.log('nombre peli', pelicula);
+          this.films.push(pelicula);
+        })
+      );
+    });
+    return this.films;
   }
 }
