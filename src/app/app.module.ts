@@ -20,6 +20,10 @@ import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { AngularFireStorageModule } from '@angular/fire/storage';
 import { AngularFireAuthModule } from '@angular/fire/auth';
 import { FB_CONFIG } from 'src/environments/credentials';
+
+//SCROLL INFINITO
+import { InfiniteScrollModule } from 'ngx-infinite-scroll';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -40,6 +44,7 @@ import { FB_CONFIG } from 'src/environments/credentials';
     AngularFirestoreModule, // firestore
     AngularFireAuthModule, // auth
     AngularFireStorageModule, // storage
+    InfiniteScrollModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

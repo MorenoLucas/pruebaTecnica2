@@ -14,6 +14,8 @@ export class HomeComponent implements OnInit {
   vehicles;
   naves;
   user: boolean;
+  private finishPage = 5;
+  private actualPage: number;
   constructor(
     private servApi: ServApiService,
     private router: Router,
@@ -28,6 +30,7 @@ export class HomeComponent implements OnInit {
     //   this.naves = this.vehicles.results;
     // });
     // // }
+    this.actualPage = 1;
   }
 
   ngOnInit() {
@@ -50,5 +53,12 @@ export class HomeComponent implements OnInit {
   goDetails(i, nomb) {
     this.servApi.setShipDetails(i);
     this.router.navigate(['details', nomb]);
+  }
+  onScroll() {
+    if (this.actualPage < this.finishPage) {
+      this.actualPage++;
+    } else {
+      console.log('No more lines. Finish page!');
+    }
   }
 }
