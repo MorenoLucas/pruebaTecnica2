@@ -25,19 +25,19 @@ export class ServApiService {
   getShipDetails(): Observable<Ship> {
     return this.detailsShip;
   }
-  getUser() {
-    return this.user;
-  }
-  compareLogin(email: string, password: string) {
-    this.user = usuarios.find(
-      (user) => user.email === email && user.password === password
-    );
-    if (this.user) {
-      return true;
-    } else {
-      return false;
-    }
-  }
+  // getUser() {
+  //   return this.user;
+  // }
+  // compareLogin(email: string, password: string) {
+  //   this.user = usuarios.find(
+  //     (user) => user.email === email && user.password === password
+  //   );
+  //   if (this.user) {
+  //     return true;
+  //   } else {
+  //     return false;
+  //   }
+  // }
   getFilms() {
     this.films = [];
     this.getShipDetails().subscribe((item) => {
