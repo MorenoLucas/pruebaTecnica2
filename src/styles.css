@@ -4,3 +4,11 @@ body {
   background-repeat: no-repeat;
   background-size: cover;
 }
+@font-face {
+  font-family: stars;
+  src: url(assets/Starjedi.ttf) format("opentype");
+}
+@font-face {
+  font-family: starsLine;
+  src: url(assets/Starjhol.ttf) format("opentype");
+}

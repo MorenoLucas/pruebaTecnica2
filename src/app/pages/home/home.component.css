@@ -1,0 +1,12 @@
+.stars {
+  font-family: starsLine;
+  color: yellow;
+  font-size: 2rem;
+  width: 50vw;
+}
+.contenedor {
+  display: grid;
+  margin-top: 6rem;
+  justify-content: center;
+  align-content: center;
+}
