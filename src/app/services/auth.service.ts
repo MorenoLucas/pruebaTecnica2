@@ -26,6 +26,7 @@ export class AuthService {
         password
       );
       this.isLooged = true;
+      this.router.navigateByUrl('/');
 
       return result;
     } catch (error) {
