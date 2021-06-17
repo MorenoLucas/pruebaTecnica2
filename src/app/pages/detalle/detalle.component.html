@@ -7,7 +7,9 @@
           <div class="text-4xl font-extrabold leading-none text-yellow-300">
             {{ nave.name }}
           </div>
-          <div class="leading-snug text-gray-200">{{ nave.vehicle_class }}</div>
+          <div class="leading-snug text-gray-200">
+            {{ nave.starship_class }}
+          </div>
           <div class="flex justify-between font-bold border-b-4 border-gray">
             <div class="text-gray-200">Manufacture</div>
             <div class="text-gray-300">{{ nave.manufacturer }}</div>
@@ -19,6 +21,10 @@
             </div>
           </div>
           <div class="border-t-4 border-gray text-sm pb-1 m-2">
+            <div class="flex justify-between">
+              <div><span class="text-gray-200">MGLT</span></div>
+              <div class="font-bold text-gray-300">{{ nave.MGLT }} MGLT</div>
+            </div>
             <hr class="border-gray-500" />
             <div class="flex justify-between">
               <div><span class="text-gray-200"> Cargo capacity</span></div>
@@ -76,14 +82,22 @@
 
             <hr class="border-gray-500" />
             <div class="flex justify-between">
-              <div><span class="font-bold text-gray-200">Pilots</span></div>
-              <div class="font-bold"></div>
+              <div><span class="text-gray-200">Hiper Drive rating</span></div>
+              <div class="font-bold text-gray-300">
+                {{ nave.hyperdrive_rating }}
+              </div>
             </div>
-            <hr class="border-gray-500" />
-            <div class="flex justify-between" *ngFor="let item of nave.pilots">
-              <div class="pl-4 font-bold text-gray-300">
-                {{ item }}
-                <hr class="border-gray-500" />
+            <div
+              class="border-t-4 border-gray flex leading-none text-xs pt-2 pb-1"
+            >
+              <div class="pr-1 text-gray-200">*</div>
+              <div class="text-gray-200">
+                The Maximum number of Megalights this starship can travel in a
+                standard hour. A "Megalight" is a standard unit of distance and
+                has never been defined before within the Star Wars universe.
+                This figure is only really useful for measuring the difference
+                in speed of starships. We can assume it is similar to AU, the
+                distance between our Sun (Sol) and Earth.
               </div>
             </div>
           </div>

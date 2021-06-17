@@ -24,11 +24,9 @@
     *ngFor="let ship of naves"
   >
     <div class="flex justify-center items-center">
-      <a
-        class="px-2 py-1 bg-gray-600 text-sm text-green-100 rounded"
-        href="#"
-        >{{ ship.vehicle_class }}</a
-      >
+      <a class="px-2 py-1 bg-gray-600 text-sm text-gray-300 rounded" href="#">{{
+        ship.starship_class
+      }}</a>
     </div>
     <div class="mt-4">
       <a class="text-lg text-gray-700 font-medium" href="#">{{ ship.name }}</a>
@@ -36,7 +34,16 @@
     <div class="flex justify-between items-center mt-4">
       <div class="flex items-center">
         <button
-          class="text-gray-700 text-sm mx-3"
+          class="
+            px-2
+            py-1
+            bg-gray-600
+            text-sm text-gray-300
+            rounded
+            cursor-pointer
+            hover:bg-yellow-300
+            hover:text-gray-700
+          "
           (click)="goDetails(ship.url, ship.name)"
         >
           SHOW

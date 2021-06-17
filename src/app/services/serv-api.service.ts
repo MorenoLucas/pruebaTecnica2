@@ -7,7 +7,7 @@ import { usuarios } from '../../assets/usuarios.json';
   providedIn: 'root',
 })
 export class ServApiService {
-  private url = 'https://swapi.dev/api/vehicles/';
+  private url = 'https://swapi.dev/api/starships/';
   user;
   detailsShip;
   films = [];
